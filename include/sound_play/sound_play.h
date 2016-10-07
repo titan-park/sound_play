@@ -387,7 +387,7 @@ private:
     if (vol < 0)
       msg.volume = 0;
     else if (vol > 1.0)
-      msg.volume = 1.0f;
+      msg.volume = 1.0;
     else
       msg.volume = vol;
 
