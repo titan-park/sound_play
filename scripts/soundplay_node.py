@@ -64,6 +64,8 @@ Error opening pygst. Is gstreamer installed?
     print str
     exit(1)
 
+pub_sound = rospy.Publisher("sout", String, queue_size=2)
+
 def sleep(t):
     try:
         rospy.sleep(t)
@@ -273,8 +275,8 @@ class soundplay:
                 sound = self.select_sound(data)
                 sound.command(data.command)
 
-		pub = rospy.Publisher("sout", String, queue_size=2)
-		pub.publish("o")
+		#pub_sound = rospy.Publisher("sout", String, queue_size=2)
+		pub_sound.publish("o")
 		rospy.loginfo("sound Check")
 
 	except Exception, e:
